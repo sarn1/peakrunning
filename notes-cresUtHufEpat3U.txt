@@ -6,6 +6,8 @@ font-family: 'Raleway', sans-serif;Raleway', Verdana, Geneva, sans-serif;
 
 http://minifycode.com/html-minifier/
 http://unminify.com/
+
+cd website/peakrunning/wp-content/themes/peakrunning
 ==========
 TODO
 ==========
@@ -16,8 +18,6 @@ TODO
 - style custom fonts and colors into tinymce
 - final css compression
 - check 404
-- notes suffix change
-- script.min.js url change
 
 ==========
 PLUGINS
