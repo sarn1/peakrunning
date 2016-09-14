@@ -18,6 +18,8 @@ Style
 }
 
 body {
+  margin: 0;
+  background: url(/wp-content/uploads/2016/09/background.jpg) repeat scroll 0 0 #FFFFFF;
 
   //reset skeleton
   font-family: $font-stack;
@@ -39,18 +41,18 @@ body {
   }
 
   h1 {
+    font-size: $font-size-xlg;
+    line-height: $line-height-xlg;
+  }
+
+  h2 {
     font-size: $font-size-lg;
     line-height: $line-height-lg;
   }
 
-  h2 {
+  h3 {
     font-size: $font-size-md;
     line-height: $line-height-md;
-  }
-
-  h3 {
-    font-size: 1.05em;
-    line-height: 1em;
   }
 
   h1 + table, h2 + table, h3 + table {
@@ -101,15 +103,33 @@ body {
   //head
   header {
     text-align:center;
+    max-width: $nav-width;
+    margin: 5px auto 0 auto;
+
+    #logo_container {
+      float:left;
+      max-width: 465px;
+      text-align: left;
+      margin-bottom: -50px;
+    }
+
+    #local_info {
+      padding-top: 10px;
+      float: right;
+      max-width: 475px;
+      text-align: right;
+      font-size: 0.875em;
+      line-height: 1.40em;
+      color: #000;
+      vertical-align: text-bottom;
+    }
 
     //nav
     nav {
-      max-width: $max-width;
       margin:auto;
       width:100%;
       text-align: center;
-      background-color: $secondary-color;
-      @include debug2;
+      background-color: #000;
 
       .current-menu-parent>a, .current-menu-item a {
         color: $primary-color;
@@ -120,9 +140,6 @@ body {
     nav ul {
       margin: 0 auto;
       padding:0;
-      max-width: $menu-max-width;
-      width:100%;
-      @include debug5;
       line-height: 40px;
 
       li {
@@ -137,16 +154,18 @@ body {
 
         a {
           @include inline-block;
-          padding:  0 15px;
-          color: $secondary-color;
+          padding:  0 40px;
+          color: $primary-color;
           text-decoration: none;
           transition: background-color 2s;
+          transition: color 2s;
+          font-size: $font-size-md;
+          line-height: $line-height-md;
 
           &:hover {
             cursor: pointer;
-            background-color: $primary-color;
-            color: $ternary-color;
-            font-weight:normal;
+            font-size: $font-size-md;
+            line-height: $line-height-md;
           }
         }
 
@@ -160,7 +179,8 @@ body {
           }
 
           &> a {
-            background: $primary-color;
+            color: $primary-color;
+            background-color:rgba(153, 153, 153, 0.4);
           }
         }
 
@@ -178,12 +198,13 @@ body {
           overflow: hidden;
           min-width: 100%;
           padding: 10px 5px;
+          background-color: #000;
 
-          -webkit-transition: opacity 0.4s ease-out;
-          -moz-transition: opacity 0.4s ease-out;
-          -o-transition: opacity 0.4s ease-out;
-          -ms-transition: opacity 0.4s ease-out;
-          transition: opacity 0.4s ease-out;
+          -webkit-transition: opacity 0.2s ease-out;
+          -moz-transition: opacity 0.2s ease-out;
+          -o-transition: opacity 0.2s ease-out;
+          -ms-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
 
           @include box-shadow;
 
@@ -194,7 +215,6 @@ body {
 
             a {
               display: block;
-              line-height: $line-height;
               text-transform: none;
               position: relative;
               z-index: 999999;
@@ -208,9 +228,11 @@ body {
   //main
   main {
     max-width: $max-width;
-    margin: auto;
-
-    @include debug;
+    box-shadow: 0 0 20px #231f20;
+    margin: 30px auto;
+    min-height: 400px;
+    padding: 30px 20px;
+    background-color: #FFF;
 
     article {
       padding: 25px 10px;
@@ -219,8 +241,9 @@ body {
 
   //footer
   footer {
-    margin-top: 25px;
-    text-align: center;
+    margin: 25px auto;
+    background-color: $secondary-color;
+    max-width: $nav-width;
   }
 
   //404

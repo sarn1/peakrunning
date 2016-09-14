@@ -29,15 +29,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/css\/main.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/css\/main.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/includes\/ie.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -682,12 +673,12 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/includes\/scss\/main.scss",
-		"outputAbbreviatedPath": "\/includes\/css\/main.css",
+		"outputAbbreviatedPath": "\/style.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 1,
 		"useLibsass": 0
 		},
 	"\/index.php": {

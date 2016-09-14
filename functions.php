@@ -18,7 +18,7 @@ add_filter('types_information_table', '__return_false');
 add_theme_support('menus'); //enable menus
 add_theme_support('post-thumbnails'); //enable post thumbnails
 add_theme_support( 'title-tag' ); //enable title
- 
+
 
 //register nav menus
 add_action('init','jet4_register_nav_menus');
@@ -65,24 +65,6 @@ function my_blog_page () {
   return false;
 }
 
-// Add specific CSS class by filter
-add_filter( 'body_class', 'my_body_class_names' );
-function my_body_class_names( $classes ) {
-
-  $classes[] ='';
-
-  // add 'class-name' to the $classes array
-  if (my_blog_page()) {
-	$classes[] = 'blog_pages';
-  } elseif (my_find_a_class()) {
-	$classes[] = 'find_a_class_pages';
-  }
-  // return the $classes array
-  return $classes;
-}
-
-
-
 //register theme script
 add_action('init','jet4_register_theme_script');
 function jet4_register_theme_script() {
@@ -111,7 +93,7 @@ function prefix_add_my_stylesheet() {
   wp_enqueue_style( 's452-style' );
 
 }
-	
+
 
 
 /*	TINYMCE
@@ -153,10 +135,10 @@ if ( ! function_exists( 'wpex_mce_buttons' ) ) {
 
 function my_mce4_options( $init ) {
 $default_colours = '
-    "000000", "Black",        "993300", "Burnt orange", "333300", "Dark olive",   "003300", "Dark green",   "003366", "Dark azure",   "000080", "Navy Blue",      "333399", "Indigo",       "333333", "Very dark gray", 
-    "800000", "Maroon",       "FF6600", "Orange",       "808000", "Olive",        "008000", "Green",        "008080", "Teal",         "0000FF", "Blue",           "666699", "Grayish blue", "808080", "Gray", 
-    "FF0000", "Red",          "FF9900", "Amber",        "99CC00", "Yellow green", "339966", "Sea green",    "33CCCC", "Turquoise",    "3366FF", "Royal blue",     "800080", "Purple",       "999999", "Medium gray", 
-    "FF00FF", "Magenta",      "FFCC00", "Gold",         "FFFF00", "Yellow",       "00FF00", "Lime",         "00FFFF", "Aqua",         "00CCFF", "Sky blue",       "993366", "Brown",        "C0C0C0", "Silver", 
+    "000000", "Black",        "993300", "Burnt orange", "333300", "Dark olive",   "003300", "Dark green",   "003366", "Dark azure",   "000080", "Navy Blue",      "333399", "Indigo",       "333333", "Very dark gray",
+    "800000", "Maroon",       "FF6600", "Orange",       "808000", "Olive",        "008000", "Green",        "008080", "Teal",         "0000FF", "Blue",           "666699", "Grayish blue", "808080", "Gray",
+    "FF0000", "Red",          "FF9900", "Amber",        "99CC00", "Yellow green", "339966", "Sea green",    "33CCCC", "Turquoise",    "3366FF", "Royal blue",     "800080", "Purple",       "999999", "Medium gray",
+    "FF00FF", "Magenta",      "FFCC00", "Gold",         "FFFF00", "Yellow",       "00FF00", "Lime",         "00FFFF", "Aqua",         "00CCFF", "Sky blue",       "993366", "Brown",        "C0C0C0", "Silver",
     "FF99CC", "Pink",         "FFCC99", "Peach",        "FFFF99", "Light yellow", "CCFFCC", "Pale green",   "CCFFFF", "Pale cyan",    "99CCFF", "Light sky blue", "CC99FF", "Plum",         "FFFFFF", "White"
 ';
 $custom_colours = '
@@ -170,7 +152,7 @@ return $init;
 add_filter('tiny_mce_before_init', 'my_mce4_options');
 */
 
-/* BOOTSTRAP MODS 
+/* BOOTSTRAP MODS
 //auto add img-responsive to all images added via the wp post
 //http://stackoverflow.com/questions/20473004/how-to-add-automatic-class-in-image-for-wordpress-post
 function add_responsive_class($content){
@@ -181,29 +163,29 @@ function add_responsive_class($content){
         $document->loadHTML(utf8_decode($content));
 
         $imgs = $document->getElementsByTagName('img');
-        foreach ($imgs as $img) {           
+        foreach ($imgs as $img) {
            $img->setAttribute('class','img-responsive');
         }
 
         $html = $document->saveHTML();
-        return $html;   
+        return $html;
 }
 add_filter        ('the_content', 'add_responsive_class');
 
 
 require_once('includes/bootstrap/wp_bootstrap_navwalker.php');
- 
+
 */
 
 
 
 /* BLOG FUNCTIONALITY
 
-//blog commenting 
-function mw_comments($comment, $args, $depth) { ?> 
+//blog commenting
+function mw_comments($comment, $args, $depth) { ?>
 	<?php $GLOBALS['comment'] = $comment; ?>
 
-	
+
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 		<div class="comment-author vcard">
 			<div class="image">
@@ -215,29 +197,29 @@ function mw_comments($comment, $args, $depth) { ?>
 				</div>
 				<small class="comment-date"><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)'),'  ','') ?></small>
 			</div>
-		</div>		 
+		</div>
 		<?php if ($comment->comment_approved == '0') : ?>
 			<em><?php _e('Your comment is awaiting moderation.') ?></em>
 			<br />
-		<?php endif; ?>		 
-		 <div class="comment-text">	
+		<?php endif; ?>
+		 <div class="comment-text">
 			 <?php comment_text() ?>
 			 <div class="reply">
 				<?php echo comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])); ?>
 			 </div>
 		 </div>
-<?php }  
+<?php }
 
 
-//automatically assign categories to blog post - assign all blog post as blog 
-function add_category_automatically1($post_ID) {  
-    global $wpdb;  
-        if(!in_category('bundle')){  
-            $cat = array(1);  
-            wp_set_object_terms($post_ID, $cat, 'category', true);  
-        }  
-}  
-add_action('publish_post', 'add_category_automatically1');  
+//automatically assign categories to blog post - assign all blog post as blog
+function add_category_automatically1($post_ID) {
+    global $wpdb;
+        if(!in_category('bundle')){
+            $cat = array(1);
+            wp_set_object_terms($post_ID, $cat, 'category', true);
+        }
+}
+add_action('publish_post', 'add_category_automatically1');
 
 
 */
