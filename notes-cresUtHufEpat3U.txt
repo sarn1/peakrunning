@@ -12,11 +12,12 @@ cd website/peakrunning/wp-content/themes/peakrunning
 TODO
 ==========
 - security plugins to hide
+- plugins to list
 - change email in settings
 - delete if necessary functions.php widgetareas
 - style custom fonts and colors into tinymce
 - final css compression
-- check 404
+- do 404
 
 ==========
 PLUGINS

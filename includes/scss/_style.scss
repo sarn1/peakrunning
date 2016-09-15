@@ -3,6 +3,8 @@
 Style
 =============== */
 
+
+
 ._clear {
   content: ".";
   display: block;
@@ -134,6 +136,7 @@ body {
       .current-menu-parent>a, .current-menu-item a {
         color: $primary-color;
         font-weight:bold;
+        background-color:rgba(153, 153, 153, 0.4);
       }
     }
 
@@ -228,7 +231,7 @@ body {
   //main
   main {
     max-width: $max-width;
-    box-shadow: 0 0 20px #231f20;
+    @include box-shadow;
     margin: 30px auto;
     min-height: 400px;
     padding: 30px 20px;
@@ -240,11 +243,97 @@ body {
   }
 
   //footer
+  footer * {
+    margin:0;
+  }
+
   footer {
-    margin: 25px auto;
+    margin: 25px auto 10px auto;
     background-color: $secondary-color;
     max-width: $nav-width;
+    color: #000;
+
+    ul {
+      list-style:none;
+      margin: 0 0 0 7px;
+      @include inline-block;
+      vertical-align: middle;
+
+      li {
+        @include inline-block;
+        margin: auto 2px;
+
+        a, a:hover {
+          color: #000;
+          font-size: $font-size-xlg;
+          line-height: $font-size-md;
+
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .columns {
+      padding: 5px 15px;
+
+      &.right {
+        margin-top: 3px;
+        text-align: right;
+
+        form {
+          margin:0;
+        }
+
+        #mc_embed_signup {
+          @include inline-block;
+          margin-left: 10px;
+
+          input[type=submit] {
+            background-color: #000;
+            color: $primary-color;
+            font-size: $font-size-md;
+            border:none;
+            vertical-align: bottom;
+          }
+        }
+
+      }
+    }
   }
+
+  .copyright {
+    font-size: $font-size-sm;
+    text-align:center;
+    margin:0 auto 5px auto;
+    padding:0;
+  }
+
+  //home
+  &.home main {
+    max-width: $max-width-home;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+
+    .soliloquy-container {
+      @include box-shadow;
+    }
+
+    .home_middle {
+      margin-top: 20px;
+
+      .columns {
+        @include box-shadow;
+        background-color: #000;
+        color: #FFF;
+
+      }
+    }
+  }
+
 
   //404
   &.error404 {
