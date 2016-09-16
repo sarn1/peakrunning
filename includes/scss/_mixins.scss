@@ -23,16 +23,33 @@ mixins
 }
 
 @mixin box-shadow {
-  -webkit-box-shadow: 7px 9px 10px -3px rgba(140,136,140,1);
-  -moz-box-shadow: 7px 9px 10px -3px rgba(140,136,140,1);
-  box-shadow: 7px 9px 10px -3px rgba(140,136,140,1);
+  -webkit-box-shadow: 0px 0px 26px 5px rgba(35,31,32,0.57);
+  -moz-box-shadow: 0px 0px 26px 5px rgba(35,31,32,0.57);
+  box-shadow: 0px 0px 26px 5px rgba(35,31,32,0.57);
 }
+
 
 @mixin inline-block {
   display:-moz-inline-stack;
   display:inline-block;
   zoom:1;
   *display:inline;
+}
+
+@mixin google-maps {
+  .google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+  }
+  .google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 
 @mixin gradient-bg {
@@ -75,6 +92,10 @@ mixins
   height: auto;
 }
 
-@mixin box-shadow {
-  box-shadow: 0 0 20px #231f20;
+@mixin transition-delay {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
