@@ -89,6 +89,7 @@ mixins
 
 @mixin responsive-img {
   width: 100%;
+  max-width: 266px;
   height: auto;
 }
 

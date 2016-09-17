@@ -21,11 +21,11 @@ get_header(); ?>
       <aside>
         <?php if (get_the_ID() == 17 ): ?>
         <div class="aside_container">
-          <?php echo do_shortcode('[content_block id=29]'); ?>
+          <?php echo do_shortcode('[content_block id=50]'); ?>
         </div>
 
         <div class="aside_container">
-          <?php echo do_shortcode('[content_block id=29]'); ?>
+          <?php echo do_shortcode('[content_block id=52]'); ?>
         </div>
         <?php endif; ?>
       </aside>

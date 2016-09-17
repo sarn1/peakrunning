@@ -3192,21 +3192,34 @@ body {
   body hr {
     margin-top: 1rem;
     margin-bottom: 2rem; }
-  body img {
-    width: 100%;
-    height: auto; }
   body input[type="email"]:focus, body input[type="number"]:focus, body input[type="search"]:focus, body input[type="text"]:focus, body input[type="tel"]:focus, body input[type="url"]:focus, body input[type="password"]:focus, body textarea:focus, body select:focus {
     border-color: #72afb6; }
   body input[type="email"], body input[type="number"], body input[type="search"], body input[type="text"], body input[type="tel"], body input[type="url"], body input[type="password"], body textarea, body select {
     color: #ff8403; }
   body input, body textarea, body select, body fieldset {
     margin-bottom: 1em; }
+  body ol li {
+    margin: 0 5px; }
   body pre, body blockquote, body dl, body figure, body table, body p, body ul, body ol, body form {
     margin-bottom: 1em; }
+  body ul {
+    list-style: disc; }
+    body ul li {
+      margin: 0 20px; }
   body .ajax-loader {
     max-width: 16px; }
   body span.wpcf7-not-valid-tip {
     color: #590000; }
+  body .wpcf7 {
+    margin-top: 30px; }
+    body .wpcf7 input[type=text], body .wpcf7 input[type=email], body .wpcf7 textarea {
+      width: 100%; }
+    body .wpcf7 input[type=submit] {
+      background-color: #72afb6;
+      font-weight: bold;
+      font-size: 1em;
+      text-transform: lowercase;
+      margin-top: -20px; }
   body header {
     text-align: center;
     max-width: 1000px;
@@ -3216,6 +3229,8 @@ body {
       max-width: 465px;
       text-align: left;
       margin-bottom: -50px; }
+      body header #logo_container img {
+        max-width: 100%; }
     body header #local_info {
       padding-top: 10px;
       float: right;
@@ -3230,9 +3245,8 @@ body {
       width: 100%;
       text-align: center;
       background-color: #000; }
-      body header nav .current-menu-parent > a, body header nav .current-menu-item a {
+      body header nav .current_page_parent > a, body header nav .current-menu-parent > a, body header nav .current-menu-item a {
         color: #ff8403;
-        font-weight: bold;
         background-color: rgba(153, 153, 153, 0.4); }
     body header nav ul {
       margin: 0 auto;
@@ -3308,8 +3322,74 @@ body {
     min-height: 400px;
     padding: 30px 20px;
     background-color: #FFF; }
-    body main article {
-      padding: 25px 10px; }
+    body main article h1 {
+      color: #ff8403;
+      margin: 0 0 15px 0; }
+    body main article h2 {
+      color: #999999;
+      margin: 20px 0 10px 0;
+      border-bottom: thin solid #999999;
+      width: 100%; }
+    body main article h3 {
+      color: #ff8403; }
+    body main aside h2 {
+      margin: 10px 0;
+      color: #ff8403; }
+    body main aside .aside_container {
+      margin-bottom: 30px; }
+    body main aside.blog_pages h2 {
+      font-size: 1.5em;
+      line-height: 1em; }
+    body main aside.blog_pages label {
+      display: none; }
+    body main aside.blog_pages select {
+      width: 100%;
+      color: #000; }
+      body main aside.blog_pages select option {
+        color: #000; }
+  body.blog .sub-menu a {
+    background-color: transparent;
+    font-weight: normal; }
+  body.blog_pages article .article_link {
+    background-color: #72afb6;
+    color: #000;
+    max-width: 250px;
+    text-align: center;
+    padding: 5px 0;
+    display: block;
+    margin-bottom: 10px; }
+    body.blog_pages article .article_link:hover {
+      background-color: #999999; }
+  body.blog_pages article .blog_archive h1 {
+    color: #999999;
+    margin-bottom: 10px; }
+  body.blog_pages article .blog_archive small {
+    color: #72afb6; }
+  body.blog_pages article .blog_archive .feat_img {
+    border: thin solid #999;
+    box-shadow: 0px 0px 26px 5px rgba(35, 31, 32, 0.57);
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    max-width: 150px;
+    text-align: center;
+    font-size: 0;
+    position: relative; }
+    body.blog_pages article .blog_archive .feat_img img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto; }
+  body.blog_pages article .blog_single .article_link {
+    margin-top: 10px; }
   body footer * {
     margin: 0; }
   body footer {
@@ -3361,6 +3441,8 @@ body {
     text-align: center;
     margin: 0 auto 5px auto;
     padding: 0; }
+    body .copyright a {
+      color: #ff8403; }
   body.home main {
     max-width: 1000px;
     padding: 0;
@@ -3385,7 +3467,6 @@ body {
           body.home main .home_middle .columns .container p {
             text-align: left; }
           body.home main .home_middle .columns .container ul {
-            list-style: disc;
             padding: 0;
             margin: 0;
             text-align: left; }

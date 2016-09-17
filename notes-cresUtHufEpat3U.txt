@@ -1,6 +1,9 @@
 ==========
 NOTES
 ==========
+
+- blog code in index to have all post in dropdown box
+
 <link href='https://fonts.googleapis.com/css?family=Raleway:300,300italic,600,600italic,400italic,400' rel='stylesheet' type='text/css'>
 font-family: 'Raleway', sans-serif;Raleway', Verdana, Geneva, sans-serif;
 
@@ -17,7 +20,10 @@ TODO
 - delete if necessary functions.php widgetareas
 - style custom fonts and colors into tinymce
 - final css compression
+- header + footer minification
 - do 404
+- final images
+
 
 ==========
 PLUGINS
