@@ -16,18 +16,20 @@ cd website/peakrunning/wp-content/themes/peakrunning
 ==========
 TODO
 ==========
-- security plugins to hide
-- plugins to list
-- change email in settings
-- delete if necessary functions.php widgetareas
-- style custom fonts and colors into tinymce
-- final css compression
-- header + footer minification
-- do 404
 - final images
-
 
 ==========
 PLUGINS
 ==========
+- ag custom admin
 - backup buddy
+- contact form 7
+- contact form db
+- custom post widget
+- enable media replace
+- post snippets
+- post types order
+- responsive menu
+- response wordpress slider - soliloque lite
+- tinymce advanced
+- toolset types

@@ -3,42 +3,6 @@
 Media Queries
 =============== */
 
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-
-
-
-/*==========  Mobile First Method  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-
-}
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
-}
-
-
-
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
@@ -46,19 +10,109 @@ Media Queries
 
 }
 
+
+@media only screen and (max-width : 1000px) {
+  img {
+    @include responsive-img();
+  }
+
+  .wp-image-61 {
+    display:none; //fit process image
+  }
+}
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+  body{
+    header {
+      #logo_container {
+        float:none;
+        margin:0 auto;
+      }
+
+      #local_info {
+        float: none;
+        margin: 0 auto;
+        padding: 0 15px;
+        text-align:center;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width : 940px) {
 
 }
 
+@media only screen and (max-width : 900px) {
+  .feat_img {
+    display:none;
+  }
+}
+
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+  body {
+    main {
+      .home_middle {
+        .columns {
+          display: block;
+          width: 100%;
+          margin:0 0 25px 0;
 
+          .container {
+            width: 100%;
+            padding: 5px 25px !important;
+
+            .btn {
+              max-width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 700px) {
+  body {
+    footer {
+      .columns {
+        display:block;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 550px) {
+  body{
+    &.page-id-11 {
+      main {
+        article {
+          .columns {
+            .item_container {
+              img {
+                max-width: 180px;
+                margin-bottom: -30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+  h1 {
+    font-size: $font-size-lg;
+  }
 }
 
 /* Custom, iPhone Retina */

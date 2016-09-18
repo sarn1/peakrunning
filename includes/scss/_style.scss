@@ -68,11 +68,6 @@ body {
     margin-bottom: 2rem;
   }
 
-  img {
-    //@include responsive-img;
-  }
-
-
   input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
     border-color: $secondary-color;
   }
@@ -489,6 +484,10 @@ body {
 
     .home_middle {
       margin-top: 20px;
+
+      img {
+        width: 100%;
+      }
 
       .columns {
         @include box-shadow;

@@ -41,7 +41,7 @@ $navmenus = array(
 
 //widget areas
 $widgetareas = array(
-  'Sidebar', 'Footer'
+  'Sidebar'
 );
 
 //turn off toolset types front-end menu
