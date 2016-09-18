@@ -313,6 +313,23 @@ body {
     }
   }
 
+  //goods and gears
+  &.page-id-11 {
+    main {
+      article {
+        margin-bottom: 25px;
+
+        .category_banner {
+          width: 100%;
+        }
+
+        .item_container {
+          text-align:center;
+        }
+      }
+    }
+  }
+
   //blog
   &.blog {
     .sub-menu {
@@ -323,11 +340,7 @@ body {
     }
   }
 
-
   &.blog_pages {
-
-
-
     article {
       .article_link {
         background-color: $secondary-color;
@@ -535,11 +548,15 @@ body {
               border-bottom: thin solid;
             }
           }
+
+          .btn {
+            margin-top: 25px;
+          }
         }
 
         &.right {
           .btn {
-            margin-top: 27px !important;
+            margin-top: 27px;
           }
         }
       }

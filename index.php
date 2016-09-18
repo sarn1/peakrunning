@@ -58,7 +58,7 @@
                 <option>Select Article</option>
                 <?php
                 global $post;
-                $args = array( 'numberposts' => -1);
+                $args = array( 'numberposts' => -1, 'post_status' => 'publish' );
                 $posts = get_posts($args);
                 foreach( $posts as $post ) : setup_postdata($post); ?>
                   <option value="<? echo $post->ID; ?>">

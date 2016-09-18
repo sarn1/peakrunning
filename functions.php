@@ -1,5 +1,39 @@
 <?php
 
+//renders the good and gear item grids
+function my_render_goods_and_gears_item ($items) {
+  $counter = 1;
+  foreach($items as $i) {
+    if ($counter == 1) {
+      echo '<div class="row">';
+    }
+    ?>
+    <div class="three columns">
+      <div class="item_container">
+        <img src="<?php echo $i->img; ?>" alt="<?php echo $i->title;?>" title="<?php echo $i->title?>">
+      </div>
+    </div>
+    <?php
+    ++$counter;
+    if ($counter == 5) {
+      $counter = 1;
+      echo '</div>';
+    }
+  }
+  if ($counter == 2) {
+    echo '<div class="three columns">&nbsp;</div><div class="three columns">&nbsp;</div><div class="threee columns">&nbsp;</div>';
+  }
+  elseif ($counter == 3) {
+    echo '<div class="three columns">&nbsp;</div><div class="three columns">&nbsp;</div>';
+  }
+  elseif ($counter == 4) {
+    echo '<div class="three columns">&nbsp;</div>';
+  }
+?>
+  </div>
+<?php
+}
+
 //nav menus
 $navmenus = array(
   'Main Menu'

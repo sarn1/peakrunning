@@ -3347,6 +3347,12 @@ body {
       color: #000; }
       body main aside.blog_pages select option {
         color: #000; }
+  body.page-id-11 main article {
+    margin-bottom: 25px; }
+    body.page-id-11 main article .category_banner {
+      width: 100%; }
+    body.page-id-11 main article .item_container {
+      text-align: center; }
   body.blog .sub-menu a {
     background-color: transparent;
     font-weight: normal; }
@@ -3487,8 +3493,10 @@ body {
           list-style: none; }
           body.home main .home_middle .columns.mid ul li {
             border-bottom: thin solid; }
+        body.home main .home_middle .columns.mid .btn {
+          margin-top: 25px; }
         body.home main .home_middle .columns.right .btn {
-          margin-top: 27px !important; }
+          margin-top: 27px; }
   body .google-maps {
     position: relative;
     padding-bottom: 75%;

@@ -19,7 +19,16 @@ if ( function_exists( 'soliloquy' ) ) { soliloquy( '32' ); }
     <div class="container">
       <div class="content">
         <h1>upcoming events</h1>
-        <?php echo do_shortcode('[content_block id=42]'); ?>
+        <ul>
+          <?php
+          $args = array( 'post_status' => 'publish', 'numberposts' => 5, 'order'=> 'DESC');
+          $postslist = get_posts( $args );
+          foreach ($postslist as $post) :  setup_postdata($post); ?>
+            <li>
+              <a href="<?php echo get_the_permalink()?>"><?php echo mb_strimwidth(get_the_title(),0,27,'...')?></a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
         <a class="btn" href="/event-calendar/">view more events »</a>
       </div>
     </div>
