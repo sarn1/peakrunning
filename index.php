@@ -12,6 +12,13 @@
           <div class="row">
             <div class="eight columns">
               <?php
+                if (is_archive()){
+                  $cat = get_the_category();
+                  echo '<div class="blog_banner">'.ucwords($cat[0]->name).'</div>';
+                } elseif (is_home()) {
+                  echo '<div class="blog_banner">All Events</div>';
+                }
+
               while (have_posts()) {
                 the_post();
               ?>
@@ -20,7 +27,7 @@
                   <div class="row blog_archive">
                     <div class="eight columns">
                       <a href="<?= the_permalink() ?>"><h1><?php the_title()?></h1></a>
-                      <small><?php the_date() ?></small>
+                      <small><?php echo get_the_date() ?></small>
                       <?php the_excerpt() ?>
                       <a href="<?= the_permalink() ?>" class="article_link">read full article »</a>
                       <div class="blog_cat"><strong>Categories: </strong><?php the_category(', '); ?></div>
@@ -47,7 +54,15 @@
                     <a href="/event-calendar/" class="article_link">« back to all blog</a>
                   </div>
                 <?php endif; ?>
-            <?php } ?>
+            <?php }
+
+            //blog pagination
+            if (!is_single()) {
+              echo '<div  class="page-link">';
+              echo posts_nav_link('<span class="page-link-spacer">&bull;</span>', '&laquo; Newer posts  ', '  Older posts &raquo;');
+              echo '</div>';
+            }
+            ?>
             </article>
           </div>
           <div class="four columns">

@@ -336,6 +336,15 @@ body {
   }
 
   &.blog_pages {
+
+    .blog_banner {
+      background-color: #000;
+      color: $primary-color;
+      padding: 15px;
+      margin-bottom: 35px;
+      font-size: $font-size-md;
+    }
+
     article {
       .article_link {
         background-color: $secondary-color;
