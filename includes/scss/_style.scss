@@ -132,23 +132,27 @@ body {
     #logo_container {
       float:left;
       max-width: 465px;
-      text-align: left;
-      margin-bottom: -50px;
+      text-align: center;
 
       img {
         max-width: 100%;
       }
+
+      p {
+        margin-top: -30px;
+        font-weight: bold;
+      }
     }
 
-    #local_info {
-      padding-top: 10px;
+    #logo_twist_container {
+      padding-top: 30px;
       float: right;
-      max-width: 475px;
-      text-align: right;
-      font-size: 0.875em;
-      line-height: 1.40em;
-      color: #000;
-      vertical-align: text-bottom;
+      max-width: 340px;
+
+      p {
+        margin-top: 5px;
+        font-weight: bold;
+      }
     }
 
     //nav
