@@ -191,12 +191,12 @@ body {
           transition: background-color 2s;
           transition: color 2s;
           font-size: $font-size;
-          line-height: $line-height;
+          line-height: 2em;
 
           &:hover {
             cursor: pointer;
             font-size: $font-size;
-            line-height: $line-height;
+            line-height: 2em;
           }
         }
 
